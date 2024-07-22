@@ -231,9 +231,9 @@ const EventForm = ({
         </div>
         <ul className="text-light">
           {testimonials.map((testimonial, index) => (
-            <div className=" flex gap-2">
-            <li key={index}>{testimonial.title}</li>
-            <li key={index}>{testimonial.person}</li>
+            <div key={index} className=" flex gap-2">
+            <li >{testimonial.title}</li>
+            <li >{testimonial.person}</li>
             </div>
           ))}
         </ul>
