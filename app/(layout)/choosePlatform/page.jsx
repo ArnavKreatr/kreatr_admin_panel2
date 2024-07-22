@@ -39,6 +39,7 @@ const ChoosePlatform = () => {
                     {val.platform === 'Settings'?(
                         isSettings === true ?<div className='border border-dark pl-4 pr-4 pt-2 pb-2 rounded-md'>
                             {val.platform}
+                            
                         </div>:<></>
                     ) : (
                         <div className='border border-dark pl-4 pr-4 pt-2 pb-2 rounded-md'>

@@ -66,7 +66,7 @@ const EventDetails = () => {
               key={index}
               className="bg-white w-full h-full rounded-lg flex flex-col justify-center items-center pl-8 pr-8 pt-20 pb-20 mt-4"
             >
-              <div className="pb-4">"{val.title}"</div>
+              <div className="pb-4">{val.title}</div>
               <div className="w-full">--{val.person}</div>
             </div>
           ))}
