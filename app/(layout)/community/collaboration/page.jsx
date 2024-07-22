@@ -1,3 +1,4 @@
+'use client'
 import { DeleteButton } from "@/app/components/deleteButton";
 import { DeleteConfirmation } from "@/app/components/deleteButton";
 import React, { useEffect, useState } from "react";

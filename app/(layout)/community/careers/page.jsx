@@ -1,3 +1,5 @@
+'use client'
+
 import { DeleteConfirmation } from "@/app/components/deleteButton";
 import React, { useEffect, useState } from "react";
 import PacmanLoader from "react-spinners/ClipLoader";
