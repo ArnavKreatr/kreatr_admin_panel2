@@ -29,6 +29,7 @@ const BlogDetail = () => {
         </div>
 
         <div>
+          
           {data .blogDetails!== undefined &&
             data.blogDetails.map((val, index) =>
               val.tagType !== "images" ? (
