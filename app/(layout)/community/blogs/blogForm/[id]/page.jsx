@@ -89,6 +89,8 @@ export default function BlogForm() {
     }
   };
 
+  
+
   const removeSection = (index) => {
     const newSections = sections.filter((_, i) => i !== index);
     setSections(newSections);
