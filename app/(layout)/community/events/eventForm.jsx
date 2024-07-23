@@ -104,6 +104,7 @@ const EventForm = ({
       const api = oldHeading === "" ? "https://erfaz8h6s3.execute-api.ap-south-1.amazonaws.com/dev/eventInfo":`https://erfaz8h6s3.execute-api.ap-south-1.amazonaws.com/dev/eventInfo/${id}`
     console.log("testttttttttt",api);
     try {
+      
       const response = await fetch(
         api,
         {
