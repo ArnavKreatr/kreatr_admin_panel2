@@ -1,12 +1,12 @@
 "use client";
 
 import axios from "axios";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export default function BlogForm() {
   const { id } = useParams();
-
+  const router = useRouter();
   const [sections, setSections] = useState([]);
   const [isPreviewing, setIsPreviewing] = useState(false); // State for managing preview mode
   const [heading, setHeading] = useState("");
@@ -88,6 +88,8 @@ export default function BlogForm() {
       updatePreview(newSections);
     }
   };
+
+  
 
   const removeSection = (index) => {
     const newSections = sections.filter((_, i) => i !== index);
@@ -175,8 +177,9 @@ export default function BlogForm() {
       writer,
       blogDetails: publishData,
     };
-
-    console.log("Publish Body:", body);
+    const userConfirmed = window.confirm('Are you sure you want to make changes?');
+    if (userConfirmed) {
+      console.log("Publish Body:", body);
 
     const api =
       id === "id"
@@ -199,8 +202,8 @@ export default function BlogForm() {
       }
 
       console.log("Response Data:", data);
-      alert("Blog published successfully");
-
+       alert("Blog published successfully");
+       router.back();
       // Clear the form after publishing
       setSections([]);
       setHeading("");
@@ -212,6 +215,11 @@ export default function BlogForm() {
       console.error("Publish failed", error);
       alert(`Error: ${error.message}`);
     }
+      console.log('yes');
+    } else {
+      console.log('cancel');
+    }
+    
   };
 
   const getClassForType = (type) => {
@@ -351,14 +359,17 @@ export default function BlogForm() {
                 </div>
               ))}
             </div>
-            <div id="buttonContainer" className="flex mt-4">
-              <button onClick={previewContent} className="btn">
+            <div id="buttonContainer" className="flex mt-4 gap-4">
+              <button onClick={()=>{router.back()}} className="btn border pl-4 pr-4 rounded-md">
+                Cancel
+              </button>
+              <button onClick={previewContent} className="btn border pl-4 pr-4 rounded-md">
                 Preview
               </button>
-              <button onClick={publishLater} className="btn ml-2">
+              {/* <button onClick={publishLater} className="btn ml-2">
                 Publish Later
-              </button>
-              <button onClick={publish} className="btn ml-2">
+              </button> */}
+              <button onClick={publish} className="btn ml-2 border pl-4 pr-4 rounded-md">
                 Publish
               </button>
             </div>
@@ -426,6 +437,7 @@ export default function BlogForm() {
           </>
         )}
       </div>
+      <div></div>
     </div>
   );
 }
