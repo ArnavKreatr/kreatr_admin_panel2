@@ -99,7 +99,9 @@ const EventForm = ({
       location,
       hoverColor,
     };
-    const api = oldHeading === "" ? "https://erfaz8h6s3.execute-api.ap-south-1.amazonaws.com/dev/eventInfo":`https://erfaz8h6s3.execute-api.ap-south-1.amazonaws.com/dev/eventInfo/${id}`
+    const userConfirmed = oldHeading !== "" ? window.confirm('Are you sure you want to make changes?'):true;
+    if (userConfirmed) {
+      const api = oldHeading === "" ? "https://erfaz8h6s3.execute-api.ap-south-1.amazonaws.com/dev/eventInfo":`https://erfaz8h6s3.execute-api.ap-south-1.amazonaws.com/dev/eventInfo/${id}`
     console.log("testttttttttt",api);
     try {
       const response = await fetch(
@@ -122,6 +124,10 @@ const EventForm = ({
     setTrigger('assfdfg')
     setAddEventsBtnHandler(false);
     console.log(eventData);
+    }else{
+      console.log('cancel');
+    }
+    
   };
 
   return (
