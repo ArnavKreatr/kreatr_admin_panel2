@@ -89,7 +89,7 @@ export default function BlogForm() {
     }
   };
 
-  
+
 
   const removeSection = (index) => {
     const newSections = sections.filter((_, i) => i !== index);
@@ -177,7 +177,7 @@ export default function BlogForm() {
       writer,
       blogDetails: publishData,
     };
-    const userConfirmed = window.confirm('Are you sure you want to make changes?');
+    const userConfirmed = heading === ""? true:window.confirm('Are you sure you want to make changes?');
     if (userConfirmed) {
       console.log("Publish Body:", body);
 

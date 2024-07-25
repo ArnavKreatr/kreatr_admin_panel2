@@ -22,6 +22,8 @@ const CareersForm = ({setAddEventsBtnHandler, oldTitle,oldType,oldLocation,oldDe
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const userConfirmed = oldTitle !== "" ? window.confirm('Are you sure you want to make changes?'):true;
+    if (userConfirmed) {
     try {
       const api = oldDescription===''? 'https://pcfja54uwi.execute-api.ap-south-1.amazonaws.com/dev/career':`https://pcfja54uwi.execute-api.ap-south-1.amazonaws.com/dev/career/${id}`;
         const response = await fetch(api,{
@@ -40,7 +42,7 @@ const CareersForm = ({setAddEventsBtnHandler, oldTitle,oldType,oldLocation,oldDe
         alert(error);
     }
     
-    console.log(formData);
+    console.log(formData);}
   };
 
   return (
