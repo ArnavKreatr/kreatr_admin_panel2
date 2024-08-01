@@ -23,7 +23,7 @@ const Studio = ({ children }) => {
       <div style={{ width: '20%'}}>
         <StudioDrawer drawerItems={drawerItems} selectedIndex={selectedIndex}/>
       </div>
-      <div style={{ width: '80%',}}>
+      <div className='h-full' style={{ width: '80%',}}>
         {children}
       </div>
     </div>
