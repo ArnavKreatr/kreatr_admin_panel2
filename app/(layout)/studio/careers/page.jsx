@@ -1,12 +1,11 @@
-'use client'
-import { useEffect, useState } from "react";
 import Studio from "../page";
+import CommunityCareers from "../../community/careers/page";
 
 const Careers = () => {
 
   return (
     <Studio>
-      <h1>Studio Careers</h1>
+      <CommunityCareers/>
     </Studio>
   );
 };

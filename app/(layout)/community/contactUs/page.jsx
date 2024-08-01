@@ -50,7 +50,7 @@ const CommunityContactUs = ({ setDeleteConfirmation, setApi }) => {
             ) :(
               <div className="grid grid-cols-2 gap-4">
               {  contactUsRequests.map((val, index) => (
-                <div key={index}className="border p-4 bg-dark bg-opacity-[10%]">
+                <div key={index}className="border  p-4 bg-dark bg-opacity-[10%]">
                   <div className="w-full flex justify-end items-end">
                     <div
                       className=" w-[5%] h-[5%]"
